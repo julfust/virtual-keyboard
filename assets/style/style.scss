@@ -1,0 +1,114 @@
+@font-face {
+    font-family: 'ModernDOS';
+    src: url('./../font/ModernDOS9x16.eot');
+    src: url('./../font/ModernDOS9x16.eot?#iefix') format('embedded-opentype'),
+        url('./../font/ModernDOS9x16.woff2') format('woff2'),
+        url('./../font/ModernDOS9x16.woff') format('woff'),
+        url('./../font/ModernDOS9x16.ttf') format('truetype'),
+        url('./../font/ModernDOS9x16.svg#ModernDOS9x16') format('svg');
+}
+
+html body {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+.global-container {
+    color: red;
+    font-size: 2vw;
+    text-align: center;
+    border: 1px solid red;
+
+    & > * {
+        background-color: #444;
+        border: 1px solid red; 
+    }
+
+    & > * > * {
+        background-color: pink;
+        border: 1px solid blue;
+        text-align: center;
+    }
+
+    & > * > * > * {
+        background-color: purple;
+        border: 1px solid green;
+        text-align: center;
+    }
+
+    & > * > * > * > * {
+        background-color: brown;
+        border: 1px solid yellow;
+        text-align: center;
+    }
+
+    & > * > * > * > * > * {
+        background-color: orangered;
+        border: 1px solid black;
+        text-align: center;
+    }
+
+    .button-container {
+        width: 37.5vw;
+        margin-left: auto;
+        margin-bottom: 6vh;
+        display: flex;
+        justify-content: space-between;
+
+        &__item {
+            width: 17vw;
+            display: block;
+            font-size: 3.5vw;
+            // 3.5vw d'espace entre les deux bouttons
+        }
+    }
+
+    .input-view {
+        width: 82vw;
+        height: 30vh;
+        margin: auto;
+        margin-bottom: 4vh;
+    }
+
+    .keyboard-container {
+        width: 82vw;
+        height: 26vh;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .key-container {
+            width: 82vw;
+            height: 5vh;
+            display: flex;
+            justify-content: space-between;
+            // 2vh d'espace entre chaque ligne
+
+            &__item {
+                width: 6.2vw;
+                height: 5vh;
+            }
+
+            &:nth-child(1) {
+                height: 3vh;
+
+                & > .key-container__item {
+                    width: 6.2vw;
+                    height: 3vh;
+                }
+            }
+
+            &:last-child {
+                height: 3vh;
+
+                & > .key-container__item {
+                    width: 6.2vw;
+                    height: 3vh;
+                }
+            }
+        }
+    }
+}

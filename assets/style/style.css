@@ -1,0 +1,124 @@
+@font-face {
+  font-family: 'ModernDOS';
+  src: url("./../font/ModernDOS9x16.eot");
+  src: url("./../font/ModernDOS9x16.eot?#iefix") format("embedded-opentype"), url("./../font/ModernDOS9x16.woff2") format("woff2"), url("./../font/ModernDOS9x16.woff") format("woff"), url("./../font/ModernDOS9x16.ttf") format("truetype"), url("./../font/ModernDOS9x16.svg#ModernDOS9x16") format("svg");
+}
+
+html body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.global-container {
+  color: red;
+  font-size: 2vw;
+  text-align: center;
+  border: 1px solid red;
+}
+
+.global-container > * {
+  background-color: #444;
+  border: 1px solid red;
+}
+
+.global-container > * > * {
+  background-color: pink;
+  border: 1px solid blue;
+  text-align: center;
+}
+
+.global-container > * > * > * {
+  background-color: purple;
+  border: 1px solid green;
+  text-align: center;
+}
+
+.global-container > * > * > * > * {
+  background-color: brown;
+  border: 1px solid yellow;
+  text-align: center;
+}
+
+.global-container > * > * > * > * > * {
+  background-color: orangered;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.global-container .button-container {
+  width: 37.5vw;
+  margin-left: auto;
+  margin-bottom: 6vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.global-container .button-container__item {
+  width: 17vw;
+  display: block;
+  font-size: 3.5vw;
+}
+
+.global-container .input-view {
+  width: 82vw;
+  height: 30vh;
+  margin: auto;
+  margin-bottom: 4vh;
+}
+
+.global-container .keyboard-container {
+  width: 82vw;
+  height: 26vh;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.global-container .keyboard-container .key-container {
+  width: 82vw;
+  height: 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.global-container .keyboard-container .key-container__item {
+  width: 6.2vw;
+  height: 5vh;
+}
+
+.global-container .keyboard-container .key-container:nth-child(1) {
+  height: 3vh;
+}
+
+.global-container .keyboard-container .key-container:nth-child(1) > .key-container__item {
+  width: 6.2vw;
+  height: 3vh;
+}
+
+.global-container .keyboard-container .key-container:last-child {
+  height: 3vh;
+}
+
+.global-container .keyboard-container .key-container:last-child > .key-container__item {
+  width: 6.2vw;
+  height: 3vh;
+}
+/*# sourceMappingURL=style.css.map */
