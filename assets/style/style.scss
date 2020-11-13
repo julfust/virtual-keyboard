@@ -50,18 +50,17 @@ html body {
         text-align: center;
     }
 
-    .button-container {
+    .setting-section {
         width: 37.5vw;
         margin-left: auto;
         margin-bottom: 6vh;
         display: flex;
         justify-content: space-between;
 
-        &__item {
+        &__button {
             width: 17vw;
             display: block;
             font-size: 3.5vw;
-            // 3.5vw d'espace entre les deux bouttons
         }
     }
 
@@ -72,41 +71,59 @@ html body {
         margin-bottom: 4vh;
     }
 
-    .keyboard-container {
+    .keyboard {
         width: 82vw;
         height: 26vh;
         margin: auto;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        align-items: center;
 
-        .key-container {
+        .row {
             width: 82vw;
             height: 5vh;
             display: flex;
             justify-content: space-between;
-            // 2vh d'espace entre chaque ligne
-
-            &__item {
-                width: 6.2vw;
-                height: 5vh;
-            }
 
             &:nth-child(1) {
                 height: 3vh;
+            }
 
-                & > .key-container__item {
-                    width: 6.2vw;
-                    height: 3vh;
-                }
+            &:nth-child(3) {
+                width: 75.5vw;
             }
 
             &:last-child {
                 height: 3vh;
+            }
 
-                & > .key-container__item {
-                    width: 6.2vw;
+            &__key {
+                width: 6.2vw;
+                height: 5vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &--small {
                     height: 3vh;
+                }
+
+                &--large {
+                    width: 9.3vw;
+                }
+
+                &--xlarge {
+                    width: 12.4vw;
+                }
+
+                &--space {
+                    width: 38.2vw;
+                }
+
+                & > span {
+                    display: block;
+                    font-size: 3vw;
                 }
             }
         }

@@ -47,7 +47,7 @@ html body {
   text-align: center;
 }
 
-.global-container .button-container {
+.global-container .setting-section {
   width: 37.5vw;
   margin-left: auto;
   margin-bottom: 6vh;
@@ -59,7 +59,7 @@ html body {
           justify-content: space-between;
 }
 
-.global-container .button-container__item {
+.global-container .setting-section__button {
   width: 17vw;
   display: block;
   font-size: 3.5vw;
@@ -72,7 +72,7 @@ html body {
   margin-bottom: 4vh;
 }
 
-.global-container .keyboard-container {
+.global-container .keyboard {
   width: 82vw;
   height: 26vh;
   margin: auto;
@@ -86,9 +86,12 @@ html body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.global-container .keyboard-container .key-container {
+.global-container .keyboard .row {
   width: 82vw;
   height: 5vh;
   display: -webkit-box;
@@ -99,26 +102,50 @@ html body {
           justify-content: space-between;
 }
 
-.global-container .keyboard-container .key-container__item {
+.global-container .keyboard .row:nth-child(1) {
+  height: 3vh;
+}
+
+.global-container .keyboard .row:nth-child(3) {
+  width: 75.5vw;
+}
+
+.global-container .keyboard .row:last-child {
+  height: 3vh;
+}
+
+.global-container .keyboard .row__key {
   width: 6.2vw;
   height: 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.global-container .keyboard-container .key-container:nth-child(1) {
+.global-container .keyboard .row__key--small {
   height: 3vh;
 }
 
-.global-container .keyboard-container .key-container:nth-child(1) > .key-container__item {
-  width: 6.2vw;
-  height: 3vh;
+.global-container .keyboard .row__key--large {
+  width: 9.3vw;
 }
 
-.global-container .keyboard-container .key-container:last-child {
-  height: 3vh;
+.global-container .keyboard .row__key--xlarge {
+  width: 12.4vw;
 }
 
-.global-container .keyboard-container .key-container:last-child > .key-container__item {
-  width: 6.2vw;
-  height: 3vh;
+.global-container .keyboard .row__key--space {
+  width: 38.2vw;
+}
+
+.global-container .keyboard .row__key > span {
+  display: block;
+  font-size: 3vw;
 }
 /*# sourceMappingURL=style.css.map */
