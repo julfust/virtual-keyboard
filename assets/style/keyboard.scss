@@ -27,26 +27,26 @@ html body {
     }
 
     & > * > * {
-        background-color: pink;
-        border: 1px solid blue;
-        text-align: center;
-    }
-
-    & > * > * > * {
-        background-color: purple;
-        border: 1px solid green;
-        text-align: center;
-    }
-
-    & > * > * > * > * {
         background-color: brown;
         border: 1px solid yellow;
         text-align: center;
     }
 
-    & > * > * > * > * > * {
+    & > * > * > * {
         background-color: orangered;
         border: 1px solid black;
+        text-align: center;
+    }
+
+    & > * > * > * > * {
+        background-color: pink;
+        border: 1px solid blue;
+        text-align: center;
+    }
+
+    & > * > * > * > * > * {
+        background-color: purple;
+        border: 1px solid green;
         text-align: center;
     }
 
@@ -69,6 +69,11 @@ html body {
         height: 30vh;
         margin: auto;
         margin-bottom: 4vh;
+
+        &__paragraph {
+            margin-bottom: 2vw;
+            text-align: left;
+        }
     }
 
     .keyboard {
@@ -123,6 +128,7 @@ html body {
 
                 & > span {
                     display: block;
+                    font-family: sans-serif;
                     font-size: 3vw;
                 }
             }

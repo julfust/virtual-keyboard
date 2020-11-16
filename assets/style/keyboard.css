@@ -24,26 +24,26 @@ html body {
 }
 
 .global-container > * > * {
-  background-color: pink;
-  border: 1px solid blue;
-  text-align: center;
-}
-
-.global-container > * > * > * {
-  background-color: purple;
-  border: 1px solid green;
-  text-align: center;
-}
-
-.global-container > * > * > * > * {
   background-color: brown;
   border: 1px solid yellow;
   text-align: center;
 }
 
-.global-container > * > * > * > * > * {
+.global-container > * > * > * {
   background-color: orangered;
   border: 1px solid black;
+  text-align: center;
+}
+
+.global-container > * > * > * > * {
+  background-color: pink;
+  border: 1px solid blue;
+  text-align: center;
+}
+
+.global-container > * > * > * > * > * {
+  background-color: purple;
+  border: 1px solid green;
   text-align: center;
 }
 
@@ -70,6 +70,11 @@ html body {
   height: 30vh;
   margin: auto;
   margin-bottom: 4vh;
+}
+
+.global-container .input-view__paragraph {
+  margin-bottom: 2vw;
+  text-align: left;
 }
 
 .global-container .keyboard {
@@ -146,6 +151,7 @@ html body {
 
 .global-container .keyboard .row__key > span {
   display: block;
+  font-family: sans-serif;
   font-size: 3vw;
 }
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=keyboard.css.map */
