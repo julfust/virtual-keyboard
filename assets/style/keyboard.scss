@@ -8,6 +8,23 @@
         url('./../font/ModernDOS9x16.svg#ModernDOS9x16') format('svg');
 }
 
+$breakpoint: (
+    desktop: 992px,
+    tablet: 768px,
+);
+
+@mixin desktop_layout {
+    @media all and (min-width: map-get($breakpoint, desktop)) {
+        @content;
+    }
+}
+
+@mixin tablet_layout {
+    @media all and (min-width: map-get($breakpoint, tablet)) {
+        @content;
+    }
+}
+
 html body {
     margin: 0;
     padding: 0;
@@ -16,7 +33,7 @@ html body {
 }
 
 .global-container {
-    color: red;
+    color: black;
     font-size: 2vw;
     text-align: center;
     border: 1px solid red;
@@ -57,11 +74,38 @@ html body {
         display: flex;
         justify-content: space-between;
 
+        @include tablet_layout {
+            margin-bottom: 4vh;
+        }
+
+        @include desktop_layout {
+            width: 25vw;
+        }
+
         &__button {
             width: 17vw;
             display: block;
             font-size: 3.5vw;
+
+            @include tablet_layout {
+                font-size: 3vw;
+            }
+
+            @include desktop_layout {
+                width: 11.25vw;
+                font-size: 2vw;
+            }
         }
+    }
+
+    &__title {
+        width: 40vw;
+        margin: auto;
+        margin-bottom: 4vh;
+        color: red;
+        font-size: 3vw;
+        background-color: transparent;
+        border: none;
     }
 
     .input-view {
@@ -70,13 +114,17 @@ html body {
         margin: auto;
         margin-bottom: 4vh;
 
+        @include tablet_layout {
+            height: 56vh;
+        }
+
         &__paragraph {
             margin-bottom: 2vw;
             text-align: left;
         }
     }
 
-    .keyboard {
+    .mobile-keyboard {
         width: 82vw;
         height: 26vh;
         margin: auto;
@@ -85,14 +133,30 @@ html body {
         justify-content: space-between;
         align-items: center;
 
+        @include tablet_layout {
+            height: 36vh;
+        }
+
+        @include desktop_layout {
+            display: none;
+        }
+
         .row {
             width: 82vw;
             height: 5vh;
             display: flex;
             justify-content: space-between;
 
+            @include tablet_layout {
+                height: 6vh;
+            }
+
             &:nth-child(1) {
                 height: 3vh;
+
+                @include tablet_layout {
+                    height: 6vh;
+                }
             }
 
             &:nth-child(3) {
@@ -101,6 +165,10 @@ html body {
 
             &:last-child {
                 height: 3vh;
+
+                @include tablet_layout {
+                    height: 6vh;
+                }
             }
 
             &__key {
@@ -110,8 +178,17 @@ html body {
                 justify-content: center;
                 align-items: center;
 
+                @include tablet_layout {
+                    width: 7.2vw;
+                    height: 6vh;
+                }
+
                 &--small {
                     height: 3vh;
+
+                    @include tablet_layout {
+                        height: 6vh;
+                    }
                 }
 
                 &--large {
@@ -126,10 +203,97 @@ html body {
                     width: 38.2vw;
                 }
 
+                &:active {
+                    background-color: #444;
+                }
+
                 & > span {
                     display: block;
                     font-family: sans-serif;
                     font-size: 3vw;
+                    
+                    @include tablet_layout {
+                        font-size: 2.5vw;
+                    }
+                }
+
+                & > .upper {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .desktop-keyboard {
+        width: 62vw;
+        height: 38vh;
+        margin: auto;
+        display: none;
+
+        @include desktop_layout{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .row {
+            width: 62vw;
+            height: 6vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &:first-child {
+                width: 58vw;
+            }
+
+            &:nth-child(2) {
+                width: 54vw;
+            }
+
+            &:nth-child(4) {
+                width: 58vw;
+            }
+
+            &:nth-child(5) {
+                width: 26vw;
+            }
+
+            &__key {
+                width: 4vw;
+                height: 6vh;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 2px outset #444;
+                
+                &--large {
+                    width: 8vw;
+                }
+
+                &--space {
+                    width: 26vw;
+                }
+
+                &:active {
+                    border-style: inset;
+                }
+
+                & > span {
+                    font-size: 2vw;
+                    font-family: sans-serif;
+                }
+
+                & > .led {
+                    position: absolute;
+                    top: 0.8vh;
+                    left: 0.5vw;
+                    width: 0.7vw;
+                    height: 0.7vw;
+                    background-color: black;
+                    border-radius: 50%;
                 }
             }
         }

@@ -31,5 +31,40 @@ export let view = {
         })
         
         return promise
+    },
+
+    removeParagraph: function() {
+        let inputView = document.querySelector(".input-view")
+        let paragraphList = document.querySelectorAll(".paragraph")
+        let index = paragraphList.length - 1
+
+        inputView.removeChild(paragraphList[index])
+    },
+
+    charSet: function(removedTarget, displayedTarget) {
+        let removedList = document.querySelectorAll(removedTarget)
+
+        for(let i = 0; i < removedList.length; i++)
+        {
+            removedList[i].style.display = "none"
+        }
+
+
+        let displayedList = document.querySelectorAll(displayedTarget)
+
+        for(let i = 0; i < displayedList.length; i++)
+        {
+            displayedList[i].style.display = "block"
+        }
+    },
+
+    ledSet: function(light) {
+        let led = document.querySelector(".led")
+
+        if(light)
+            led.style.backgroundColor = "#21ab37"
+
+        else
+            led.style.backgroundColor = "black"
     }
 }

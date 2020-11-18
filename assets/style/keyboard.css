@@ -12,7 +12,7 @@ html body {
 }
 
 .global-container {
-  color: red;
+  color: black;
   font-size: 2vw;
   text-align: center;
   border: 1px solid red;
@@ -59,10 +59,45 @@ html body {
           justify-content: space-between;
 }
 
+@media all and (min-width: 768px) {
+  .global-container .setting-section {
+    margin-bottom: 4vh;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .global-container .setting-section {
+    width: 25vw;
+  }
+}
+
 .global-container .setting-section__button {
   width: 17vw;
   display: block;
   font-size: 3.5vw;
+}
+
+@media all and (min-width: 768px) {
+  .global-container .setting-section__button {
+    font-size: 3vw;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .global-container .setting-section__button {
+    width: 11.25vw;
+    font-size: 2vw;
+  }
+}
+
+.global-container__title {
+  width: 40vw;
+  margin: auto;
+  margin-bottom: 4vh;
+  color: red;
+  font-size: 3vw;
+  background-color: transparent;
+  border: none;
 }
 
 .global-container .input-view {
@@ -72,12 +107,18 @@ html body {
   margin-bottom: 4vh;
 }
 
+@media all and (min-width: 768px) {
+  .global-container .input-view {
+    height: 56vh;
+  }
+}
+
 .global-container .input-view__paragraph {
   margin-bottom: 2vw;
   text-align: left;
 }
 
-.global-container .keyboard {
+.global-container .mobile-keyboard {
   width: 82vw;
   height: 26vh;
   margin: auto;
@@ -96,7 +137,19 @@ html body {
           align-items: center;
 }
 
-.global-container .keyboard .row {
+@media all and (min-width: 768px) {
+  .global-container .mobile-keyboard {
+    height: 36vh;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .global-container .mobile-keyboard {
+    display: none;
+  }
+}
+
+.global-container .mobile-keyboard .row {
   width: 82vw;
   height: 5vh;
   display: -webkit-box;
@@ -107,19 +160,37 @@ html body {
           justify-content: space-between;
 }
 
-.global-container .keyboard .row:nth-child(1) {
+@media all and (min-width: 768px) {
+  .global-container .mobile-keyboard .row {
+    height: 6vh;
+  }
+}
+
+.global-container .mobile-keyboard .row:nth-child(1) {
   height: 3vh;
 }
 
-.global-container .keyboard .row:nth-child(3) {
+@media all and (min-width: 768px) {
+  .global-container .mobile-keyboard .row:nth-child(1) {
+    height: 6vh;
+  }
+}
+
+.global-container .mobile-keyboard .row:nth-child(3) {
   width: 75.5vw;
 }
 
-.global-container .keyboard .row:last-child {
+.global-container .mobile-keyboard .row:last-child {
   height: 3vh;
 }
 
-.global-container .keyboard .row__key {
+@media all and (min-width: 768px) {
+  .global-container .mobile-keyboard .row:last-child {
+    height: 6vh;
+  }
+}
+
+.global-container .mobile-keyboard .row__key {
   width: 6.2vw;
   height: 5vh;
   display: -webkit-box;
@@ -133,25 +204,150 @@ html body {
           align-items: center;
 }
 
-.global-container .keyboard .row__key--small {
+@media all and (min-width: 768px) {
+  .global-container .mobile-keyboard .row__key {
+    width: 7.2vw;
+    height: 6vh;
+  }
+}
+
+.global-container .mobile-keyboard .row__key--small {
   height: 3vh;
 }
 
-.global-container .keyboard .row__key--large {
+@media all and (min-width: 768px) {
+  .global-container .mobile-keyboard .row__key--small {
+    height: 6vh;
+  }
+}
+
+.global-container .mobile-keyboard .row__key--large {
   width: 9.3vw;
 }
 
-.global-container .keyboard .row__key--xlarge {
+.global-container .mobile-keyboard .row__key--xlarge {
   width: 12.4vw;
 }
 
-.global-container .keyboard .row__key--space {
+.global-container .mobile-keyboard .row__key--space {
   width: 38.2vw;
 }
 
-.global-container .keyboard .row__key > span {
+.global-container .mobile-keyboard .row__key:active {
+  background-color: #444;
+}
+
+.global-container .mobile-keyboard .row__key > span {
   display: block;
   font-family: sans-serif;
   font-size: 3vw;
+}
+
+@media all and (min-width: 768px) {
+  .global-container .mobile-keyboard .row__key > span {
+    font-size: 2.5vw;
+  }
+}
+
+.global-container .mobile-keyboard .row__key > .upper {
+  display: none;
+}
+
+.global-container .desktop-keyboard {
+  width: 62vw;
+  height: 38vh;
+  margin: auto;
+  display: none;
+}
+
+@media all and (min-width: 992px) {
+  .global-container .desktop-keyboard {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.global-container .desktop-keyboard .row {
+  width: 62vw;
+  height: 6vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.global-container .desktop-keyboard .row:first-child {
+  width: 58vw;
+}
+
+.global-container .desktop-keyboard .row:nth-child(2) {
+  width: 54vw;
+}
+
+.global-container .desktop-keyboard .row:nth-child(4) {
+  width: 58vw;
+}
+
+.global-container .desktop-keyboard .row:nth-child(5) {
+  width: 26vw;
+}
+
+.global-container .desktop-keyboard .row__key {
+  width: 4vw;
+  height: 6vh;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px outset #444;
+}
+
+.global-container .desktop-keyboard .row__key--large {
+  width: 8vw;
+}
+
+.global-container .desktop-keyboard .row__key--space {
+  width: 26vw;
+}
+
+.global-container .desktop-keyboard .row__key:active {
+  border-style: inset;
+}
+
+.global-container .desktop-keyboard .row__key > span {
+  font-size: 2vw;
+  font-family: sans-serif;
+}
+
+.global-container .desktop-keyboard .row__key > .led {
+  position: absolute;
+  top: 0.8vh;
+  left: 0.5vw;
+  width: 0.7vw;
+  height: 0.7vw;
+  background-color: black;
+  border-radius: 50%;
 }
 /*# sourceMappingURL=keyboard.css.map */

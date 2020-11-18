@@ -1,10 +1,17 @@
 export let modele = {
     inputList: [],
 
-    addInput: function(userInput) {
+    addInput: function(userInput, uppercase) {
         const promise = new Promise((resolve) => {
-            this.inputList.push(userInput)
-            console.log(this.inputList)
+            if(uppercase)
+            {
+                this.inputList.push(userInput.toUpperCase())
+            }
+
+            else {
+                this.inputList.push(userInput)
+            }
+            
             resolve(this.inputList)
         })
 
@@ -13,9 +20,11 @@ export let modele = {
 
     removeInput: function() {
         const promise = new Promise((resolve) => {
-            this.inputList.pop()
-            console.log(this.inputList)
-            resolve(this.inputList)
+            let data = {}
+            
+            data.char = this.inputList.pop()
+            data.inputList = this.inputList
+            resolve(data)
         })
 
         return promise
