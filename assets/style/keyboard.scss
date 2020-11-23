@@ -9,18 +9,18 @@
 }
 
 $breakpoint: (
-    desktop: 992px,
-    tablet: 768px,
+    tablet: 992px,
+    mobile: 768px,
 );
 
-@mixin desktop_layout {
-    @media all and (min-width: map-get($breakpoint, desktop)) {
+@mixin tablet_layout {
+    @media all and (max-width: map-get($breakpoint, tablet)) {
         @content;
     }
 }
 
-@mixin tablet_layout {
-    @media all and (min-width: map-get($breakpoint, tablet)) {
+@mixin mobile_layout {
+    @media all and (max-width: map-get($breakpoint, mobile)) {
         @content;
     }
 }
@@ -32,11 +32,13 @@ html body {
     box-sizing: border-box;
 }
 
+body {
+    overflow: hidden;
+}
+
 .global-container {
-    color: black;
+    width: 100%;
     font-size: 2vw;
-    text-align: center;
-    border: 1px solid red;
 
     & > * {
         background-color: #444;
@@ -46,254 +48,336 @@ html body {
     & > * > * {
         background-color: brown;
         border: 1px solid yellow;
-        text-align: center;
     }
 
     & > * > * > * {
         background-color: orangered;
         border: 1px solid black;
-        text-align: center;
     }
 
     & > * > * > * > * {
         background-color: pink;
         border: 1px solid blue;
-        text-align: center;
     }
 
     & > * > * > * > * > * {
         background-color: purple;
         border: 1px solid green;
-        text-align: center;
     }
 
-    .setting-section {
-        width: 37.5vw;
-        margin-left: auto;
-        margin-bottom: 6vh;
+    .tool-bar {
+        width: 100%;
+        height: 4.98vh;
         display: flex;
-        justify-content: space-between;
-
-        @include tablet_layout {
-            margin-bottom: 4vh;
-        }
-
-        @include desktop_layout {
-            width: 25vw;
-        }
-
-        &__button {
-            width: 17vw;
-            display: block;
-            font-size: 3.5vw;
-
-            @include tablet_layout {
-                font-size: 3vw;
-            }
-
-            @include desktop_layout {
-                width: 11.25vw;
-                font-size: 2vw;
-            }
-        }
-    }
-
-    &__title {
-        width: 40vw;
-        margin: auto;
-        margin-bottom: 4vh;
-        color: red;
-        font-size: 3vw;
-        background-color: transparent;
-        border: none;
-    }
-
-    .input-view {
-        width: 82vw;
-        height: 30vh;
-        margin: auto;
-        margin-bottom: 4vh;
-
-        @include tablet_layout {
-            height: 56vh;
-        }
-
-        &__paragraph {
-            margin-bottom: 2vw;
-            text-align: left;
-        }
-    }
-
-    .mobile-keyboard {
-        width: 82vw;
-        height: 26vh;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
         align-items: center;
 
         @include tablet_layout {
-            height: 36vh;
-        }
-
-        @include desktop_layout {
             display: none;
         }
 
-        .row {
-            width: 82vw;
-            height: 5vh;
+        .logo {
+            width: 14.2vw;
+            height: 3.2vh;
+            margin-left: 0.5vw;
             display: flex;
             justify-content: space-between;
+            align-items: center;
 
-            @include tablet_layout {
-                height: 6vh;
-            }
+            &__img {
+                width: 2vw;
+                height: 3.2vh;
 
-            &:nth-child(1) {
-                height: 3vh;
-
-                @include tablet_layout {
-                    height: 6vh;
+                & > img {
+                    width: 100%;
+                    height: 100%;
                 }
             }
 
-            &:nth-child(3) {
-                width: 75.5vw;
-            }
-
-            &:last-child {
-                height: 3vh;
-
-                @include tablet_layout {
-                    height: 6vh;
-                }
-            }
-
-            &__key {
-                width: 6.2vw;
-                height: 5vh;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                @include tablet_layout {
-                    width: 7.2vw;
-                    height: 6vh;
-                }
-
-                &--small {
-                    height: 3vh;
-
-                    @include tablet_layout {
-                        height: 6vh;
-                    }
-                }
-
-                &--large {
-                    width: 9.3vw;
-                }
-
-                &--xlarge {
-                    width: 12.4vw;
-                }
-
-                &--space {
-                    width: 38.2vw;
-                }
-
-                &:active {
-                    background-color: #444;
-                }
-
-                & > span {
-                    display: block;
-                    font-family: sans-serif;
-                    font-size: 3vw;
-                    
-                    @include tablet_layout {
-                        font-size: 2.5vw;
-                    }
-                }
-
-                & > .upper {
-                    display: none;
-                }
+            &__title {
+                width: 11.5vw;
+                font-size: 1vw;
+                font-family: "ModernDOS", Arial, Helvetica, sans-serif;
             }
         }
     }
 
-    .desktop-keyboard {
-        width: 62vw;
-        height: 38vh;
-        margin: auto;
-        display: none;
+    .screen {
+        width: 100%;
+        height: 56vh;
 
-        @include desktop_layout{
+        @include tablet_layout {
+            height: 64vh;
+        }
+
+        .copyright {
+            margin-bottom: 3.5vh;
+
+            &__text {
+                font-size: 1.5vw;
+                font-family: "ModernDOS", Arial, Helvetica, sans-serif;
+
+                @include tablet_layout {
+                    font-size: 2vw;
+                }
+
+                @include mobile_layout {
+                    font-size: 3.5vw;
+                }
+            }
+        }
+
+        &__paragraph {
+            margin-bottom: 3.5vh;
+            font-size: 1.5vw;
+            font-family: "ModernDOS", Arial, Helvetica, sans-serif;
+
+            @include tablet_layout {
+                font-size: 2vw;
+            }
+
+            @include mobile_layout {
+                font-size: 3.5vw;
+            }
+        }
+    }
+
+    .button-container {
+        width: 80vw;
+        height: 38vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        @include tablet_layout {
+            height: 35vh;
+            width: 100%;
+        }
+
+        .setting-section {
+            width: 12vw;
+
+            &__button {
+                width: 12vw;
+                display: block;
+                font-size: 2vw;
+            }
+
+            @include tablet_layout {
+                display: none;
+            }
+        }
+
+        .desktop-keyboard {
+            width: 62vw;
+            height: 38vh;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-        }
 
-        .row {
-            width: 62vw;
-            height: 6vh;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            &:first-child {
-                width: 58vw;
+            @include tablet_layout {
+                display: none;
             }
 
-            &:nth-child(2) {
-                width: 54vw;
-            }
-
-            &:nth-child(4) {
-                width: 58vw;
-            }
-
-            &:nth-child(5) {
-                width: 26vw;
-            }
-
-            &__key {
-                width: 4vw;
-                height: 6vh;
-                position: relative;
+            .row {
+                width: 62vw;
+                height: 7.6vh;
                 display: flex;
-                justify-content: center;
+                justify-content: space-between;
                 align-items: center;
-                border: 2px outset #444;
-                
-                &--large {
-                    width: 8vw;
+
+                &:first-child {
+                    width: 58vw;
                 }
 
-                &--space {
+                &:nth-child(2) {
+                    width: 54vw;
+                }
+
+                &:nth-child(4) {
+                    width: 58vw;
+                }
+
+                &:nth-child(5) {
                     width: 26vw;
                 }
 
-                &:active {
-                    border-style: inset;
+                &__key {
+                    width: 4vw;
+                    height: 6vh;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: white;
+                    border: 0.21vw outset #444;
+
+                    &--large {
+                        width: 8vw;
+                    }
+
+                    &--space {
+                        width: 26vw;
+                    }
+
+                    &:active {
+                        border-style: inset;
+                    }
+
+                    & > span {
+                        font-size: 2vw;
+                        font-family: sans-serif;
+                    }
+
+                    & > .led {
+                        position: absolute;
+                        top: 0.8vh;
+                        left: 0.5vw;
+                        width: 0.7vw;
+                        height: 0.7vw;
+                        background-color: black;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+
+        .tablet-keyboard {
+            width: 100%;
+            height: 35vh;
+            display: none;
+
+            @include tablet_layout {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            @include mobile_layout {
+                display: none;
+            }
+
+            .row {
+                width: 100%;
+                height: 5.95vh;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                &:nth-child(3) {
+                    width: 84vw;
                 }
 
-                & > span {
-                    font-size: 2vw;
-                    font-family: sans-serif;
+                &:last-child {
+                    width: 40vw;
                 }
 
-                & > .led {
-                    position: absolute;
-                    top: 0.8vh;
-                    left: 0.5vw;
-                    width: 0.7vw;
-                    height: 0.7vw;
-                    background-color: black;
-                    border-radius: 50%;
+                &__key {
+                    width: 7.75vw;
+                    height: 5.95vh;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: white;
+
+                    &--large {
+                        width: 13.32vw;
+                    }
+
+                    &--xlarge {
+                        width: 15.5vw;
+                    }
+
+                    &--space {
+                        width: 40vw;
+                    }
+
+                    &:active {
+                        background-color: grey;
+                    }
+
+                    & > span {
+                        font-size: 2.5vw;
+                        font-family: sans-serif;
+                    }
+
+                    & > .upper {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .mobile-keyboard {
+            width: 100%;
+            height: 35vh;
+            display: none;
+
+            @include mobile_layout{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .row {
+                width: 100%;
+                height: 6.65vh;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                &:first-child {
+                    height: 5.1vh;
+                }
+
+                &:nth-child(3) {
+                    width: 91vw;
+                }
+
+                &:last-child {
+                    height: 5.1vh;
+                }
+
+                &__key {
+                    width: 8.5vw;
+                    height: 6.65vh;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: white;
+                    border-radius: 10%;
+
+                    &--small {
+                        height: 5.1vh;
+                    }
+
+                    &--large {
+                        width: 12.75vw;
+                    }
+
+                    &--xlarge {
+                        width: 17vw;
+                    }
+
+                    &--space {
+                        width: 41vw;
+                    }
+
+                    &:active {
+                        background-color: grey;
+                    }
+
+                    & > span {
+                        font-size: 4vw;
+                        font-family: sans-serif;
+                    }
+
+                    & > .upper {
+                        display: none;
+                    }
                 }
             }
         }

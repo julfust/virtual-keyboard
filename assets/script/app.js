@@ -1,7 +1,8 @@
 import {modele} from "./modele.js"
 import {view} from "./view.js"
 
-let uppercase = false
+let shift = false
+let capsLock = false
 
 let app = {
 
@@ -9,7 +10,7 @@ let app = {
 
         function checkLineBreak(data)
         {   
-            if(data.char == "\\n")
+            if(data.char === "\\n")
                 view.removeParagraph()
 
             else
@@ -21,7 +22,17 @@ let app = {
 
         for(let i = 0; i < charKeyList.length; i++) {
             charKeyList[i].addEventListener("click", function() {
-                modele.addInput(this.dataset.input, uppercase).then(view.refreshScreen)
+                modele.addInput(this.dataset.input, shift, capsLock).then(view.refreshScreen)
+
+                if(shift)
+                {
+                    shift = false
+                    modele.setMajMode(shift, capsLock)
+                    view.ledSet(".shift-led", shift)
+
+                    if(!modele.uppercase)
+                        view.charSet(".upper", ".lower")
+                }
             })
         }
 
@@ -46,39 +57,123 @@ let app = {
         }
 
 
-        let capsLockKeyList = document.querySelectorAll(".caps-lock")
+        let capsLockKey = document.querySelector(".caps-lock")
 
-        for(let i = 0; i < capsLockKeyList.length; i++)
-        {
-            capsLockKeyList[i].addEventListener("click", function() {
-                if(!uppercase)
-                {
-                    uppercase = true
+        capsLockKey.addEventListener("click", function() {
+            if(!capsLock)
+            {
+                capsLock = true
+
+                modele.setMajMode(shift, capsLock)
+
+                if(modele.uppercase)
                     view.charSet(".lower", ".upper")
+                
+                view.ledSet(".caps-led", capsLock)
+            }
+
+            else
+            {
+                capsLock = false
+
+                modele.setMajMode(shift, capsLock)
+
+                if(!modele.uppercase)
+                    view.charSet(".upper", ".lower")
+
+                view.ledSet(".caps-led", capsLock)
+            }
+        })
+
+        let shiftKey = document.querySelector(".shift")
+
+        shiftKey.addEventListener("click", function() {
+            if(!shift)
+            {
+                shift = true
+
+                modele.setMajMode(shift, capsLock)
+
+                if(modele.uppercase)
+                    view.charSet(".lower", ".upper")
+
+                view.ledSet(".shift-led", shift)
+            }
+
+            else
+            {
+                shift = false
+
+                modele.setMajMode(shift, capsLock)
+
+                if(!modele.uppercase)
+                    view.charSet(".upper", ".lower")
+
+                view.ledSet(".shift-led", shift)
+            }
+        })
+
+
+        let mobileMajKeyList = document.querySelectorAll(".mobile-maj")
+
+        for(let i = 0; i < mobileMajKeyList.length; i++) {
+            mobileMajKeyList[i].addEventListener("click", function() {
+                if(!shift && !capsLock)
+                {
+                    shift = true
+                    view.ledSet(".shift-led", shift)
+
+                    modele.setMajMode(shift, capsLock)
+                    view.charSet(".lower", ".upper")
+                    
+                    return
                 }
-    
+
+                else if(shift && !capsLock)
+                {
+                    shift = false
+                    view.ledSet(".shift-led", shift)
+
+                    capsLock = true
+                    view.ledSet(".caps-led", capsLock)
+
+                    modele.setMajMode(shift, capsLock)
+                    view.charSet(".lower", ".upper")
+                    
+                    return
+                }
+
+                else if(capsLock && !shift)
+                {
+                    capsLock = false
+                    view.ledSet(".caps-led", capsLock)
+
+                    modele.setMajMode(shift, capsLock)
+                    view.charSet(".upper", ".lower")
+                    
+                    return
+                }
+
                 else
                 {
-                    uppercase = false
-                    view.charSet(".upper", ".lower")
-                }
+                    shift = false
+                    view.ledSet(".shift-led", shift)
 
-                view.ledSet(uppercase)
+                    capsLock = false
+                    view.ledSet(".caps-led", capsLock)
+
+                    modele.setMajMode(shift, capsLock)
+                    view.charSet(".upper", ".lower")
+                    
+                    return
+                }
             })
         }
-
 
         let lightButton = document.querySelector(".light-button")
 
         lightButton.addEventListener("click", function() {
             console.log("light mode")
-        })
-
-
-        let darkButton = document.querySelector(".dark-button")
-
-        darkButton.addEventListener("click", function() {
-            console.log("dark mode")
         })
     }
 }

@@ -22,10 +22,10 @@ export let view = {
     
     addParagraph: function() {
         const promise = new Promise((resolve) => {
-            let inputView = document.querySelector(".input-view")
+            let inputView = document.querySelector(".screen")
             let newParagraph = document.createElement("p")
 
-            newParagraph.className = "input-view__paragraph paragraph"
+            newParagraph.className = "screen__paragraph paragraph"
             inputView.appendChild(newParagraph)
             resolve()
         })
@@ -34,7 +34,7 @@ export let view = {
     },
 
     removeParagraph: function() {
-        let inputView = document.querySelector(".input-view")
+        let inputView = document.querySelector(".screen")
         let paragraphList = document.querySelectorAll(".paragraph")
         let index = paragraphList.length - 1
 
@@ -58,10 +58,10 @@ export let view = {
         }
     },
 
-    ledSet: function(light) {
-        let led = document.querySelector(".led")
+    ledSet: function(ledTarget, active) {
+        let led = document.querySelector(ledTarget)
 
-        if(light)
+        if(active)
             led.style.backgroundColor = "#21ab37"
 
         else

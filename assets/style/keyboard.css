@@ -11,11 +11,13 @@ html body {
           box-sizing: border-box;
 }
 
+body {
+  overflow: hidden;
+}
+
 .global-container {
-  color: black;
+  width: 100%;
   font-size: 2vw;
-  text-align: center;
-  border: 1px solid red;
 }
 
 .global-container > * {
@@ -26,102 +28,161 @@ html body {
 .global-container > * > * {
   background-color: brown;
   border: 1px solid yellow;
-  text-align: center;
 }
 
 .global-container > * > * > * {
   background-color: orangered;
   border: 1px solid black;
-  text-align: center;
 }
 
 .global-container > * > * > * > * {
   background-color: pink;
   border: 1px solid blue;
-  text-align: center;
 }
 
 .global-container > * > * > * > * > * {
   background-color: purple;
   border: 1px solid green;
-  text-align: center;
 }
 
-.global-container .setting-section {
-  width: 37.5vw;
-  margin-left: auto;
-  margin-bottom: 6vh;
+.global-container .tool-bar {
+  width: 100%;
+  height: 4.98vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media all and (max-width: 992px) {
+  .global-container .tool-bar {
+    display: none;
+  }
+}
+
+.global-container .tool-bar .logo {
+  width: 14.2vw;
+  height: 3.2vh;
+  margin-left: 0.5vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-@media all and (min-width: 768px) {
-  .global-container .setting-section {
-    margin-bottom: 4vh;
+.global-container .tool-bar .logo__img {
+  width: 2vw;
+  height: 3.2vh;
+}
+
+.global-container .tool-bar .logo__img > img {
+  width: 100%;
+  height: 100%;
+}
+
+.global-container .tool-bar .logo__title {
+  width: 11.5vw;
+  font-size: 1vw;
+  font-family: "ModernDOS", Arial, Helvetica, sans-serif;
+}
+
+.global-container .screen {
+  width: 100%;
+  height: 56vh;
+}
+
+@media all and (max-width: 992px) {
+  .global-container .screen {
+    height: 64vh;
   }
 }
 
-@media all and (min-width: 992px) {
-  .global-container .setting-section {
-    width: 25vw;
-  }
+.global-container .screen .copyright {
+  margin-bottom: 3.5vh;
 }
 
-.global-container .setting-section__button {
-  width: 17vw;
-  display: block;
-  font-size: 3.5vw;
+.global-container .screen .copyright__text {
+  font-size: 1.5vw;
+  font-family: "ModernDOS", Arial, Helvetica, sans-serif;
 }
 
-@media all and (min-width: 768px) {
-  .global-container .setting-section__button {
-    font-size: 3vw;
-  }
-}
-
-@media all and (min-width: 992px) {
-  .global-container .setting-section__button {
-    width: 11.25vw;
+@media all and (max-width: 992px) {
+  .global-container .screen .copyright__text {
     font-size: 2vw;
   }
 }
 
-.global-container__title {
-  width: 40vw;
-  margin: auto;
-  margin-bottom: 4vh;
-  color: red;
-  font-size: 3vw;
-  background-color: transparent;
-  border: none;
-}
-
-.global-container .input-view {
-  width: 82vw;
-  height: 30vh;
-  margin: auto;
-  margin-bottom: 4vh;
-}
-
-@media all and (min-width: 768px) {
-  .global-container .input-view {
-    height: 56vh;
+@media all and (max-width: 768px) {
+  .global-container .screen .copyright__text {
+    font-size: 3.5vw;
   }
 }
 
-.global-container .input-view__paragraph {
-  margin-bottom: 2vw;
-  text-align: left;
+.global-container .screen__paragraph {
+  margin-bottom: 3.5vh;
+  font-size: 1.5vw;
+  font-family: "ModernDOS", Arial, Helvetica, sans-serif;
 }
 
-.global-container .mobile-keyboard {
-  width: 82vw;
-  height: 26vh;
-  margin: auto;
+@media all and (max-width: 992px) {
+  .global-container .screen__paragraph {
+    font-size: 2vw;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .global-container .screen__paragraph {
+    font-size: 3.5vw;
+  }
+}
+
+.global-container .button-container {
+  width: 80vw;
+  height: 38vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+@media all and (max-width: 992px) {
+  .global-container .button-container {
+    height: 35vh;
+    width: 100%;
+  }
+}
+
+.global-container .button-container .setting-section {
+  width: 12vw;
+}
+
+.global-container .button-container .setting-section__button {
+  width: 12vw;
+  display: block;
+  font-size: 2vw;
+}
+
+@media all and (max-width: 992px) {
+  .global-container .button-container .setting-section {
+    display: none;
+  }
+}
+
+.global-container .button-container .desktop-keyboard {
+  width: 62vw;
+  height: 38vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -137,62 +198,46 @@ html body {
           align-items: center;
 }
 
-@media all and (min-width: 768px) {
-  .global-container .mobile-keyboard {
-    height: 36vh;
-  }
-}
-
-@media all and (min-width: 992px) {
-  .global-container .mobile-keyboard {
+@media all and (max-width: 992px) {
+  .global-container .button-container .desktop-keyboard {
     display: none;
   }
 }
 
-.global-container .mobile-keyboard .row {
-  width: 82vw;
-  height: 5vh;
+.global-container .button-container .desktop-keyboard .row {
+  width: 62vw;
+  height: 7.6vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-@media all and (min-width: 768px) {
-  .global-container .mobile-keyboard .row {
-    height: 6vh;
-  }
+.global-container .button-container .desktop-keyboard .row:first-child {
+  width: 58vw;
 }
 
-.global-container .mobile-keyboard .row:nth-child(1) {
-  height: 3vh;
+.global-container .button-container .desktop-keyboard .row:nth-child(2) {
+  width: 54vw;
 }
 
-@media all and (min-width: 768px) {
-  .global-container .mobile-keyboard .row:nth-child(1) {
-    height: 6vh;
-  }
+.global-container .button-container .desktop-keyboard .row:nth-child(4) {
+  width: 58vw;
 }
 
-.global-container .mobile-keyboard .row:nth-child(3) {
-  width: 75.5vw;
+.global-container .button-container .desktop-keyboard .row:nth-child(5) {
+  width: 26vw;
 }
 
-.global-container .mobile-keyboard .row:last-child {
-  height: 3vh;
-}
-
-@media all and (min-width: 768px) {
-  .global-container .mobile-keyboard .row:last-child {
-    height: 6vh;
-  }
-}
-
-.global-container .mobile-keyboard .row__key {
-  width: 6.2vw;
-  height: 5vh;
+.global-container .button-container .desktop-keyboard .row__key {
+  width: 4vw;
+  height: 6vh;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -202,66 +247,45 @@ html body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: white;
+  border: 0.21vw outset #444;
 }
 
-@media all and (min-width: 768px) {
-  .global-container .mobile-keyboard .row__key {
-    width: 7.2vw;
-    height: 6vh;
-  }
+.global-container .button-container .desktop-keyboard .row__key--large {
+  width: 8vw;
 }
 
-.global-container .mobile-keyboard .row__key--small {
-  height: 3vh;
+.global-container .button-container .desktop-keyboard .row__key--space {
+  width: 26vw;
 }
 
-@media all and (min-width: 768px) {
-  .global-container .mobile-keyboard .row__key--small {
-    height: 6vh;
-  }
+.global-container .button-container .desktop-keyboard .row__key:active {
+  border-style: inset;
 }
 
-.global-container .mobile-keyboard .row__key--large {
-  width: 9.3vw;
-}
-
-.global-container .mobile-keyboard .row__key--xlarge {
-  width: 12.4vw;
-}
-
-.global-container .mobile-keyboard .row__key--space {
-  width: 38.2vw;
-}
-
-.global-container .mobile-keyboard .row__key:active {
-  background-color: #444;
-}
-
-.global-container .mobile-keyboard .row__key > span {
-  display: block;
+.global-container .button-container .desktop-keyboard .row__key > span {
+  font-size: 2vw;
   font-family: sans-serif;
-  font-size: 3vw;
 }
 
-@media all and (min-width: 768px) {
-  .global-container .mobile-keyboard .row__key > span {
-    font-size: 2.5vw;
-  }
+.global-container .button-container .desktop-keyboard .row__key > .led {
+  position: absolute;
+  top: 0.8vh;
+  left: 0.5vw;
+  width: 0.7vw;
+  height: 0.7vw;
+  background-color: black;
+  border-radius: 50%;
 }
 
-.global-container .mobile-keyboard .row__key > .upper {
+.global-container .button-container .tablet-keyboard {
+  width: 100%;
+  height: 35vh;
   display: none;
 }
 
-.global-container .desktop-keyboard {
-  width: 62vw;
-  height: 38vh;
-  margin: auto;
-  display: none;
-}
-
-@media all and (min-width: 992px) {
-  .global-container .desktop-keyboard {
+@media all and (max-width: 992px) {
+  .global-container .button-container .tablet-keyboard {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -278,9 +302,15 @@ html body {
   }
 }
 
-.global-container .desktop-keyboard .row {
-  width: 62vw;
-  height: 6vh;
+@media all and (max-width: 768px) {
+  .global-container .button-container .tablet-keyboard {
+    display: none;
+  }
+}
+
+.global-container .button-container .tablet-keyboard .row {
+  width: 100%;
+  height: 5.95vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -292,25 +322,17 @@ html body {
           align-items: center;
 }
 
-.global-container .desktop-keyboard .row:first-child {
-  width: 58vw;
+.global-container .button-container .tablet-keyboard .row:nth-child(3) {
+  width: 84vw;
 }
 
-.global-container .desktop-keyboard .row:nth-child(2) {
-  width: 54vw;
+.global-container .button-container .tablet-keyboard .row:last-child {
+  width: 40vw;
 }
 
-.global-container .desktop-keyboard .row:nth-child(4) {
-  width: 58vw;
-}
-
-.global-container .desktop-keyboard .row:nth-child(5) {
-  width: 26vw;
-}
-
-.global-container .desktop-keyboard .row__key {
-  width: 4vw;
-  height: 6vh;
+.global-container .button-container .tablet-keyboard .row__key {
+  width: 7.75vw;
+  height: 5.95vh;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -321,33 +343,126 @@ html body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 2px outset #444;
+  background-color: white;
 }
 
-.global-container .desktop-keyboard .row__key--large {
-  width: 8vw;
+.global-container .button-container .tablet-keyboard .row__key--large {
+  width: 13.32vw;
 }
 
-.global-container .desktop-keyboard .row__key--space {
-  width: 26vw;
+.global-container .button-container .tablet-keyboard .row__key--xlarge {
+  width: 15.5vw;
 }
 
-.global-container .desktop-keyboard .row__key:active {
-  border-style: inset;
+.global-container .button-container .tablet-keyboard .row__key--space {
+  width: 40vw;
 }
 
-.global-container .desktop-keyboard .row__key > span {
-  font-size: 2vw;
+.global-container .button-container .tablet-keyboard .row__key:active {
+  background-color: grey;
+}
+
+.global-container .button-container .tablet-keyboard .row__key > span {
+  font-size: 2.5vw;
   font-family: sans-serif;
 }
 
-.global-container .desktop-keyboard .row__key > .led {
-  position: absolute;
-  top: 0.8vh;
-  left: 0.5vw;
-  width: 0.7vw;
-  height: 0.7vw;
-  background-color: black;
-  border-radius: 50%;
+.global-container .button-container .tablet-keyboard .row__key > .upper {
+  display: none;
+}
+
+.global-container .button-container .mobile-keyboard {
+  width: 100%;
+  height: 35vh;
+  display: none;
+}
+
+@media all and (max-width: 768px) {
+  .global-container .button-container .mobile-keyboard {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.global-container .button-container .mobile-keyboard .row {
+  width: 100%;
+  height: 6.65vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.global-container .button-container .mobile-keyboard .row:first-child {
+  height: 5.1vh;
+}
+
+.global-container .button-container .mobile-keyboard .row:nth-child(3) {
+  width: 91vw;
+}
+
+.global-container .button-container .mobile-keyboard .row:last-child {
+  height: 5.1vh;
+}
+
+.global-container .button-container .mobile-keyboard .row__key {
+  width: 8.5vw;
+  height: 6.65vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  border-radius: 10%;
+}
+
+.global-container .button-container .mobile-keyboard .row__key--small {
+  height: 5.1vh;
+}
+
+.global-container .button-container .mobile-keyboard .row__key--large {
+  width: 12.75vw;
+}
+
+.global-container .button-container .mobile-keyboard .row__key--xlarge {
+  width: 17vw;
+}
+
+.global-container .button-container .mobile-keyboard .row__key--space {
+  width: 41vw;
+}
+
+.global-container .button-container .mobile-keyboard .row__key:active {
+  background-color: grey;
+}
+
+.global-container .button-container .mobile-keyboard .row__key > span {
+  font-size: 4vw;
+  font-family: sans-serif;
+}
+
+.global-container .button-container .mobile-keyboard .row__key > .upper {
+  display: none;
 }
 /*# sourceMappingURL=keyboard.css.map */

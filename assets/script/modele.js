@@ -1,9 +1,10 @@
 export let modele = {
     inputList: [],
+    uppercase: false,
 
-    addInput: function(userInput, uppercase) {
+    addInput: function(userInput, shift, uppercase) {
         const promise = new Promise((resolve) => {
-            if(uppercase)
+            if(this.uppercase && userInput != "")
             {
                 this.inputList.push(userInput.toUpperCase())
             }
@@ -28,5 +29,13 @@ export let modele = {
         })
 
         return promise
+    },
+
+    setMajMode: function(shift, capsLock) {
+        if(!shift && !capsLock)
+            this.uppercase = false
+
+        else
+            this.uppercase = true
     }
 }
