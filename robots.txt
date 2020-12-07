@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fustier-julien.com/projet/virtual-keyboard/sitemap.xml

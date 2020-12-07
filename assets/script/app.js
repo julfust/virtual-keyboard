@@ -160,7 +160,7 @@ let app = {
 
                     modele.setMajMode(shift, capsLock)
                     view.charSet(".upper", ".lower")
-                    
+        
                     return
                 }
 
