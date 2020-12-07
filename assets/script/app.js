@@ -3,6 +3,7 @@ import {view} from "./view.js"
 
 let shift = false
 let capsLock = false
+let viewMode = "light"
 
 let app = {
 
@@ -53,6 +54,15 @@ let app = {
         {
             enterKeyList[i].addEventListener("click", function() {
                 view.addParagraph().then(modele.addInput(this.dataset.input).then(view.refreshScreen))
+                
+
+                let targetList = document.querySelectorAll(".changeable")
+
+                if(viewMode === "light")
+                    view.changeViewMode(targetList, "--night", "--light")
+    
+                else
+                    view.changeViewMode(targetList, "--light", "--night")
             })
         }
 
@@ -175,19 +185,19 @@ let app = {
         for(let i = 0; i < lightButtonlist.length; i++)
         {
             lightButtonlist[i].addEventListener("click", function() {
-                let changeable = document.querySelectorAll(".changeable")
+                let targetList = document.querySelectorAll(".changeable")
 
-                if(this.dataset.mode === "light")
+                if(viewMode === "light")
                 {
-                    view.changeViewMode(changeable, "--light", "--night")
-                    this.dataset.mode = "night"
+                    view.changeViewMode(targetList, "--light", "--night")
+                    viewMode = "night"
                     this.innerHTML = "&#9728;"
                 }
     
                 else
                 {
-                    view.changeViewMode(changeable, "--night", "--light")
-                    this.dataset.mode = "light"
+                    view.changeViewMode(targetList, "--night", "--light")
+                    viewMode = "light"
                     this.innerHTML = "&#9790;"
                 }
             })

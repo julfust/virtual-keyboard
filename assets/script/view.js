@@ -22,10 +22,14 @@ export let view = {
     
     addParagraph: function() {
         const promise = new Promise((resolve) => {
+            let paragraphList = document.querySelectorAll(".paragraph")
+            let index = paragraphList.length - 1
             let inputView = document.querySelector(".screen")
             let newParagraph = document.createElement("p")
 
-            newParagraph.className = "screen__paragraph paragraph changeable paragraph--light"
+            paragraphList[index].className = paragraphList[index].className.replace(" paragraph--active", "")
+
+            newParagraph.className = "screen__paragraph paragraph changeable paragraph--light paragraph--active"
             inputView.appendChild(newParagraph)
             resolve()
         })
@@ -39,6 +43,10 @@ export let view = {
         let index = paragraphList.length - 1
 
         inputView.removeChild(paragraphList[index])
+
+        index = paragraphList.length - 2
+
+        paragraphList[index].className += " paragraph--active"
     },
 
     charSet: function(removedTarget, displayedTarget) {

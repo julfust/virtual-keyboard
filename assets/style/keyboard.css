@@ -4,6 +4,18 @@
   src: url("./../font/ModernDOS9x16.eot?#iefix") format("embedded-opentype"), url("./../font/ModernDOS9x16.woff2") format("woff2"), url("./../font/ModernDOS9x16.woff") format("woff"), url("./../font/ModernDOS9x16.ttf") format("truetype"), url("./../font/ModernDOS9x16.svg#ModernDOS9x16") format("svg");
 }
 
+@-webkit-keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
 html body {
   margin: 0;
   padding: 0;
@@ -108,7 +120,8 @@ body {
   }
 }
 
-.global-container .screen__paragraph {
+.global-container .screen .paragraph {
+  height: 1.5vw;
   margin-bottom: 3.5vh;
   font-size: 1.5vw;
   font-family: "ModernDOS", Arial, Helvetica, sans-serif;
@@ -117,20 +130,28 @@ body {
 }
 
 @media all and (max-width: 992px) {
-  .global-container .screen__paragraph {
+  .global-container .screen .paragraph {
+    height: 2vw;
     font-size: 2vw;
   }
 }
 
 @media all and (max-width: 768px) {
-  .global-container .screen__paragraph {
+  .global-container .screen .paragraph {
+    height: 3.5vw;
     font-size: 3.5vw;
   }
 }
 
+.global-container .screen .paragraph--active::after {
+  content: "_";
+  -webkit-animation: blink 1s infinite;
+          animation: blink 1s infinite;
+}
+
 .global-container .button-container {
   width: 100%;
-  height: 38vh;
+  height: 39vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -143,7 +164,7 @@ body {
 
 @media all and (max-width: 992px) {
   .global-container .button-container {
-    height: 35vh;
+    height: 36vh;
   }
 }
 
