@@ -40,36 +40,12 @@ body {
     width: 100%;
     font-size: 2vw;
 
-    & > * {
-        background-color: #444;
-        border: 1px solid red; 
-    }
-
-    & > * > * {
-        background-color: brown;
-        border: 1px solid yellow;
-    }
-
-    & > * > * > * {
-        background-color: orangered;
-        border: 1px solid black;
-    }
-
-    & > * > * > * > * {
-        background-color: pink;
-        border: 1px solid blue;
-    }
-
-    & > * > * > * > * > * {
-        background-color: purple;
-        border: 1px solid green;
-    }
-
     .tool-bar {
         width: 100%;
         height: 4.98vh;
         display: flex;
         align-items: center;
+        transition: background-color 400ms;
 
         @include tablet_layout {
             display: none;
@@ -97,6 +73,7 @@ body {
                 width: 11.5vw;
                 font-size: 1vw;
                 font-family: "ModernDOS", Arial, Helvetica, sans-serif;
+                transition: color 400ms;
             }
         }
     }
@@ -104,6 +81,7 @@ body {
     .screen {
         width: 100%;
         height: 56vh;
+        transition: background-color 400ms;
 
         @include tablet_layout {
             height: 64vh;
@@ -115,6 +93,7 @@ body {
             &__text {
                 font-size: 1.5vw;
                 font-family: "ModernDOS", Arial, Helvetica, sans-serif;
+                transition: color 400ms;
 
                 @include tablet_layout {
                     font-size: 2vw;
@@ -130,6 +109,7 @@ body {
             margin-bottom: 3.5vh;
             font-size: 1.5vw;
             font-family: "ModernDOS", Arial, Helvetica, sans-serif;
+            transition: color 400ms;
 
             @include tablet_layout {
                 font-size: 2vw;
@@ -146,6 +126,7 @@ body {
         height: 38vh;
         display: flex;
         align-items: flex-start;
+        transition: background-color 400ms;
 
         @include tablet_layout {
             height: 35vh;
@@ -158,6 +139,7 @@ body {
                 width: 12vw;
                 display: block;
                 font-size: 2vw;
+                transition: background-color 400ms;
             }
 
             @include tablet_layout {
@@ -208,8 +190,8 @@ body {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    background-color: white;
                     border: 0.21vw outset #444;
+                    transition: color 400ms, background-color 400ms;
 
                     &--large {
                         width: 8vw;
@@ -279,7 +261,7 @@ body {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    background-color: white;
+                    transition: color 400ms, background-color 400ms;
 
                     &--large {
                         width: 13.32vw;
@@ -346,8 +328,8 @@ body {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    background-color: white;
                     border-radius: 10%;
+                    transition: color 400ms, background-color 400ms;
 
                     &--small {
                         height: 5.1vh;

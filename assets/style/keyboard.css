@@ -20,31 +20,6 @@ body {
   font-size: 2vw;
 }
 
-.global-container > * {
-  background-color: #444;
-  border: 1px solid red;
-}
-
-.global-container > * > * {
-  background-color: brown;
-  border: 1px solid yellow;
-}
-
-.global-container > * > * > * {
-  background-color: orangered;
-  border: 1px solid black;
-}
-
-.global-container > * > * > * > * {
-  background-color: pink;
-  border: 1px solid blue;
-}
-
-.global-container > * > * > * > * > * {
-  background-color: purple;
-  border: 1px solid green;
-}
-
 .global-container .tool-bar {
   width: 100%;
   height: 4.98vh;
@@ -54,6 +29,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: background-color 400ms;
+  transition: background-color 400ms;
 }
 
 @media all and (max-width: 992px) {
@@ -91,11 +68,15 @@ body {
   width: 11.5vw;
   font-size: 1vw;
   font-family: "ModernDOS", Arial, Helvetica, sans-serif;
+  -webkit-transition: color 400ms;
+  transition: color 400ms;
 }
 
 .global-container .screen {
   width: 100%;
   height: 56vh;
+  -webkit-transition: background-color 400ms;
+  transition: background-color 400ms;
 }
 
 @media all and (max-width: 992px) {
@@ -111,6 +92,8 @@ body {
 .global-container .screen .copyright__text {
   font-size: 1.5vw;
   font-family: "ModernDOS", Arial, Helvetica, sans-serif;
+  -webkit-transition: color 400ms;
+  transition: color 400ms;
 }
 
 @media all and (max-width: 992px) {
@@ -129,6 +112,8 @@ body {
   margin-bottom: 3.5vh;
   font-size: 1.5vw;
   font-family: "ModernDOS", Arial, Helvetica, sans-serif;
+  -webkit-transition: color 400ms;
+  transition: color 400ms;
 }
 
 @media all and (max-width: 992px) {
@@ -152,6 +137,8 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  -webkit-transition: background-color 400ms;
+  transition: background-color 400ms;
 }
 
 @media all and (max-width: 992px) {
@@ -168,6 +155,8 @@ body {
   width: 12vw;
   display: block;
   font-size: 2vw;
+  -webkit-transition: background-color 400ms;
+  transition: background-color 400ms;
 }
 
 @media all and (max-width: 992px) {
@@ -244,8 +233,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: white;
   border: 0.21vw outset #444;
+  -webkit-transition: color 400ms, background-color 400ms;
+  transition: color 400ms, background-color 400ms;
 }
 
 .global-container .button-container .desktop-keyboard .row__key--large {
@@ -340,7 +330,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: white;
+  -webkit-transition: color 400ms, background-color 400ms;
+  transition: color 400ms, background-color 400ms;
 }
 
 .global-container .button-container .tablet-keyboard .row__key--large {
@@ -430,8 +421,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: white;
   border-radius: 10%;
+  -webkit-transition: color 400ms, background-color 400ms;
+  transition: color 400ms, background-color 400ms;
 }
 
 .global-container .button-container .mobile-keyboard .row__key--small {

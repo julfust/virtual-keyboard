@@ -170,11 +170,28 @@ let app = {
             })
         }
 
-        let lightButton = document.querySelector(".light-button")
+        let lightButtonlist = document.querySelectorAll(".light-button")
 
-        lightButton.addEventListener("click", function() {
-            console.log("light mode")
-        })
+        for(let i = 0; i < lightButtonlist.length; i++)
+        {
+            lightButtonlist[i].addEventListener("click", function() {
+                let changeable = document.querySelectorAll(".changeable")
+
+                if(this.dataset.mode === "light")
+                {
+                    view.changeViewMode(changeable, "--light", "--night")
+                    this.dataset.mode = "night"
+                    this.innerHTML = "&#9728;"
+                }
+    
+                else
+                {
+                    view.changeViewMode(changeable, "--night", "--light")
+                    this.dataset.mode = "light"
+                    this.innerHTML = "&#9790;"
+                }
+            })
+        }
     }
 }
 

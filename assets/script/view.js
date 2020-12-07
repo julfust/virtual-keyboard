@@ -25,7 +25,7 @@ export let view = {
             let inputView = document.querySelector(".screen")
             let newParagraph = document.createElement("p")
 
-            newParagraph.className = "screen__paragraph paragraph"
+            newParagraph.className = "screen__paragraph paragraph changeable paragraph--light"
             inputView.appendChild(newParagraph)
             resolve()
         })
@@ -66,5 +66,12 @@ export let view = {
 
         else
             led.style.backgroundColor = "black"
+    },
+
+    changeViewMode: function(elList, removedMode, displayedMode) {
+        for(let i = 0; i < elList.length; i++)
+        {
+            elList[i].className = elList[i].className.replace(removedMode, displayedMode)
+        }
     }
 }

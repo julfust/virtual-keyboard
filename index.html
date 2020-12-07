@@ -6,355 +6,358 @@
     <title>Document</title>
     <link rel="stylesheet" href="./assets/style/reset.css">
     <link rel="stylesheet" href="./assets/style/keyboard.css">
+    <link rel="stylesheet" href="./assets/style/keyboard-light.css">
+    <link rel="stylesheet" href="./assets/style/keyboard-night.css">
 </head>
 <body>
     <div class="global-container">
-        <header class="tool-bar">
+        <header class="tool-bar changeable tool-bar--light">
             <div class="tool-bar__logo logo">
                 <div class="logo__img"><img src="./assets/img/cmd-logo.jpg.png" alt="terminal logo"></div>
-                <div class="logo__title">Invite de commandes</div>
+                <div class="logo__title changeable logo__title--light">Invite de commandes</div>
             </div>
         </header>
-        <section class="screen">
+
+        <section class="screen changeable screen--light">
             <div class="screen__copyright copyright">
-                <p class="copyright__text">Virtual keyboard [version 1.0]</p>
-                <p class="copyright__text">(c) 2020 Fustier Julien. All rights reserved.</p>
+                <p class="copyright__text changeable copyright__text--light">Virtual keyboard [version 1.0]</p>
+                <p class="copyright__text changeable copyright__text--light">(c) 2020 Fustier Julien</p>
             </div>
-            <p class="screen__paragraph paragraph"></p>
+            <p class="screen__paragraph paragraph changeable paragraph--light"></p>
         </section>
-        <section class="button-container">
+
+        <section class="button-container changeable button-container--light">
             <div class="button-container__setting-section setting-section">
-                <button class="setting-section__button light-button">&#9728;</button>
-                <!-- <button class="setting-section__button light-button">&#9790;</button> -->
+                <button class="setting-section__button light-button changeable light-button--light" data-mode="light">&#9790;</button>
             </div>
 
             <div class="button-container__desktop-keyboard desktop-keyboard">
                 <section class="desktop-keyboard__row row">
-                    <div class="row__key char" data-input="1"><span>1</span></div>
-                    <div class="row__key char" data-input="2"><span>2</span></div>
-                    <div class="row__key char" data-input="3"><span>3</span></div>
-                    <div class="row__key char" data-input="4"><span>4</span></div>
-                    <div class="row__key char" data-input="5"><span>5</span></div>
-                    <div class="row__key char" data-input="6"><span>6</span></div>
-                    <div class="row__key char" data-input="7"><span>7</span></div>
-                    <div class="row__key char" data-input="8"><span>8</span></div>
-                    <div class="row__key char" data-input="9"><span>9</span></div>
-                    <div class="row__key char" data-input="0"><span>0</span></div>
-                    <div class="row__key row__key--large del"><span>&#9003</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="1"><span>1</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="2"><span>2</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="3"><span>3</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="4"><span>4</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="5"><span>5</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="6"><span>6</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="7"><span>7</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="8"><span>8</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="9"><span>9</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="0"><span>0</span></div>
+                    <div class="row__key row__key--large del changeable row__key--light"><span>&#9003</span></div>
                 </section>
                 <section class="desktop-keyboard__row row">
-                    <div class="row__key char" data-input="q"><span>Q</span></div>
-                    <div class="row__key char" data-input="w"><span>W</span></div>
-                    <div class="row__key char" data-input="e"><span>E</span></div>
-                    <div class="row__key char" data-input="r"><span>R</span></div>
-                    <div class="row__key char" data-input="t"><span>T</span></div>
-                    <div class="row__key char" data-input="y"><span>Y</span></div>
-                    <div class="row__key char" data-input="u"><span>U</span></div>
-                    <div class="row__key char" data-input="i"><span>I</span></div>
-                    <div class="row__key char" data-input="o"><span>O</span></div>
-                    <div class="row__key char" data-input="p"><span>P</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="q"><span>Q</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="w"><span>W</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="e"><span>E</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="r"><span>R</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="t"><span>T</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="y"><span>Y</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="u"><span>U</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="i"><span>I</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="o"><span>O</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="p"><span>P</span></div>
                 </section>
                 <section class="desktop-keyboard__row row">
-                    <div class="row__key row__key--large caps-lock">
+                    <div class="row__key row__key--large caps-lock changeable row__key--light">
                         <span>&#128274</span><div class="led caps-led"></div>
                     </div>
-                    <div class="row__key char" data-input="a"><span>A</span></div>
-                    <div class="row__key char" data-input="s"><span>S</span></div>
-                    <div class="row__key char" data-input="d"><span>D</span></div>
-                    <div class="row__key char" data-input="f"><span>F</span></div>
-                    <div class="row__key char" data-input="g"><span>G</span></div>
-                    <div class="row__key char" data-input="h"><span>H</span></div>
-                    <div class="row__key char" data-input="j"><span>J</span></div>
-                    <div class="row__key char" data-input="k"><span>K</span></div>
-                    <div class="row__key char" data-input="l"><span>L</span></div>
-                    <div class="row__key row__key--large enter" data-input="\n"><span>&#9166</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="a"><span>A</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="s"><span>S</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="d"><span>D</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="f"><span>F</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="g"><span>G</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="h"><span>H</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="j"><span>J</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="k"><span>K</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="l"><span>L</span></div>
+                    <div class="row__key row__key--large enter changeable row__key--light" data-input="\n"><span>&#9166</span></div>
                 </section>
                 <section class="desktop-keyboard__row row">
-                    <div class="row__key row__key--large shift">
+                    <div class="row__key row__key--large shift changeable row__key--light">
                         <span>&#8679;</span><div class="led shift-led"></div>
                     </div>
-                    <div class="row__key char" data-input="z"><span>Z</span></div>
-                    <div class="row__key char" data-input="x"><span>X</span></div>
-                    <div class="row__key char" data-input="c"><span>C</span></div>
-                    <div class="row__key char" data-input="v"><span>V</span></div>
-                    <div class="row__key char" data-input="b"><span>B</span></div>
-                    <div class="row__key char" data-input="n"><span>N</span></div>
-                    <div class="row__key char" data-input="m"><span>M</span></div>
-                    <div class="row__key char" data-input=","><span>,</span></div>
-                    <div class="row__key char" data-input="."><span>.</span></div>
-                    <div class="row__key char" data-input="?"><span>?</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="z"><span>Z</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="x"><span>X</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="c"><span>C</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="v"><span>V</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="b"><span>B</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="n"><span>N</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="m"><span>M</span></div>
+                    <div class="row__key char changeable row__key--light" data-input=","><span>,</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="."><span>.</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="?"><span>?</span></div>
                 </section>
                 <section class="desktop-keyboard__row row">
-                    <div class="row__key row__key--space char" data-input="&nbsp"><span>space</span></div>
+                    <div class="row__key row__key--space char changeable row__key--light" data-input="&nbsp"><span>space</span></div>
                 </section>
             </div>
 
             <div class="button-container__tablet-keyboard tablet-keyboard">
                 <section class="tablet-keyboard__row row">
-                    <div class="row__key row__key--large light-button"><span>&#9728;</span></div>
-                    <div class="row__key char" data-input="1"><span>1</span></div>
-                    <div class="row__key char" data-input="2"><span>2</span></div>
-                    <div class="row__key char" data-input="3"><span>3</span></div>
-                    <div class="row__key char" data-input="4"><span>4</span></div>
-                    <div class="row__key char" data-input="5"><span>5</span></div>
-                    <div class="row__key char" data-input="6"><span>6</span></div>
-                    <div class="row__key char" data-input="7"><span>7</span></div>
-                    <div class="row__key char" data-input="8"><span>8</span></div>
-                    <div class="row__key char" data-input="9"><span>9</span></div>
-                    <div class="row__key char" data-input="0"><span>0</span></div>
+                    <div class="row__key row__key--large light-button changeable light-button--light" data-mode="light"><span>&#9790;</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="1"><span>1</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="2"><span>2</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="3"><span>3</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="4"><span>4</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="5"><span>5</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="6"><span>6</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="7"><span>7</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="8"><span>8</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="9"><span>9</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="0"><span>0</span></div>
                 </section>
                 <section class="tablet-keyboard__row row">
-                    <div class="row__key char" data-input="q">
+                    <div class="row__key char changeable row__key--light" data-input="q">
                         <span class="upper">Q</span>
                         <span class="lower">q</span>
                     </div>
-                    <div class="row__key char" data-input="w">
+                    <div class="row__key char changeable row__key--light" data-input="w">
                         <span class="upper">W</span>
                         <span class="lower">w</span>
                     </div>
-                    <div class="row__key char" data-input="e">
+                    <div class="row__key char changeable row__key--light" data-input="e">
                         <span class="upper">E</span>
                         <span class="lower">e</span>
                     </div>
-                    <div class="row__key char" data-input="r">
+                    <div class="row__key char changeable row__key--light" data-input="r">
                         <span class="upper">R</span>
                         <span class="lower">r</span>
                     </div>
-                    <div class="row__key char" data-input="t">
+                    <div class="row__key char changeable row__key--light" data-input="t">
                         <span class="upper">T</span>
                         <span class="lower">t</span>
                     </div>
-                    <div class="row__key char" data-input="y">
+                    <div class="row__key char changeable row__key--light" data-input="y">
                         <span class="upper">Y</span>
                         <span class="lower">y</span>
                     </div>
-                    <div class="row__key char" data-input="u">
+                    <div class="row__key char changeable row__key--light" data-input="u">
                         <span class="upper">U</span>
                         <span class="lower">u</span>
                     </div>
-                    <div class="row__key char" data-input="i">
+                    <div class="row__key char changeable row__key--light" data-input="i">
                         <span class="upper">I</span>
                         <span class="lower">i</span>
                     </div>
-                    <div class="row__key char" data-input="o">
+                    <div class="row__key char changeable row__key--light" data-input="o">
                         <span class="upper">O</span>
                         <span class="lower">o</span>
                     </div>
-                    <div class="row__key char" data-input="p">
+                    <div class="row__key char changeable row__key--light" data-input="p">
                         <span class="upper">P</span>
                         <span class="lower">p</span>
                     </div>
-                    <div class="row__key row__key--large del"><span>&#9003</span></div>
+                    <div class="row__key row__key--large del changeable row__key--light"><span>&#9003</span></div>
                 </section>
                 <section class="tablet-keyboard__row row">
-                    <div class="row__key char" data-input="a">
+                    <div class="row__key char changeable row__key--light" data-input="a">
                         <span class="upper">A</span>
                         <span class="lower">a</span>
                     </div>
-                    <div class="row__key char" data-input="s">
+                    <div class="row__key char changeable row__key--light" data-input="s">
                         <span class="upper">S</span>
                         <span class="lower">s</span>
                     </div>
-                    <div class="row__key char" data-input="d">
+                    <div class="row__key char changeable row__key--light" data-input="d">
                         <span class="upper">D</span>
                         <span class="lower">d</span>
                     </div>
-                    <div class="row__key char" data-input="f">
+                    <div class="row__key char changeable row__key--light" data-input="f">
                         <span class="upper">F</span>
                         <span class="lower">f</span>
                     </div>
-                    <div class="row__key char" data-input="g">
+                    <div class="row__key char changeable row__key--light" data-input="g">
                         <span class="upper">G</span>
                         <span class="lower">g</span>
                     </div>
-                    <div class="row__key char" data-input="h">
+                    <div class="row__key char changeable row__key--light" data-input="h">
                         <span class="upper">H</span>
                         <span class="lower">h</span>
                     </div>
-                    <div class="row__key char" data-input="j">
+                    <div class="row__key char changeable row__key--light" data-input="j">
                         <span class="upper">J</span>
                         <span class="lower">j</span>
                     </div>
-                    <div class="row__key char" data-input="k">
+                    <div class="row__key char changeable row__key--light" data-input="k">
                         <span class="upper">K</span>
                         <span class="lower">k</span>
                     </div>
-                    <div class="row__key char" data-input="l">
+                    <div class="row__key char changeable row__key--light" data-input="l">
                         <span class="upper">L</span>
                         <span class="lower">l</span>
                     </div>
-                    <div class="row__key char" data-input="z">
+                    <div class="row__key char changeable row__key--light" data-input="z">
                         <span class="upper">Z</span>
                         <span class="lower">z</span>
                     </div>
                 </section>
                 <section class="tablet-keyboard__row row">
-                    <div class="row__key row__key--xlarge mobile-maj" data-command="shift"><span>&#8679;</span></div>
-                    <div class="row__key char" data-input="x">
+                    <div class="row__key row__key--xlarge mobile-maj changeable row__key--light" data-command="shift"><span>&#8679;</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="x">
                         <span class="upper">X</span>
                         <span class="lower">x</span>
                     </div>
-                    <div class="row__key char" data-input="c">
+                    <div class="row__key char changeable row__key--light" data-input="c">
                         <span class="upper">C</span>
                         <span class="lower">c</span>
                     </div>
-                    <div class="row__key char" data-input="v">
+                    <div class="row__key char changeable row__key--light" data-input="v">
                         <span class="upper">V</span>
                         <span class="lower">v</span>
                     </div>
-                    <div class="row__key char" data-input="b">
+                    <div class="row__key char changeable row__key--light" data-input="b">
                         <span class="upper">B</span>
                         <span class="lower">b</span>
                     </div>
-                    <div class="row__key char" data-input="n">
+                    <div class="row__key char changeable row__key--light" data-input="n">
                         <span class="upper">N</span>
                         <span class="lower">n</span>
                     </div>
-                    <div class="row__key char" data-input="m">
+                    <div class="row__key char changeable row__key--light" data-input="m">
                         <span class="upper">M</span>
                         <span class="lower">m</span>
                     </div>
-                    <div class="row__key char" data-input="."><span>.</span></div>
-                    <div class="row__key char" data-input=","><span>,</span></div>
-                    <div class="row__key row__key--xlarge enter" data-input="\n"><span>&#9166</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="."><span>.</span></div>
+                    <div class="row__key char changeable row__key--light" data-input=","><span>,</span></div>
+                    <div class="row__key row__key--xlarge enter changeable row__key--light" data-input="\n"><span>&#9166</span></div>
                 </section>
                 <section class="tablet-keyboard__row row">
-                    <div class="row__key row__key--space char" data-input="&nbsp"><span>space</span></div>
+                    <div class="row__key row__key--space char changeable row__key--light" data-input="&nbsp"><span>space</span></div>
                 </section>
             </div>
 
             <div class="button-container__mobile-keyboard mobile-keyboard">
                 <div class="keyboard__row row">
-                <div class="row__key row__key--small char" data-input="1"><span>1</span></div>
-                <div class="row__key row__key--small char" data-input="2"><span>2</span></div>
-                <div class="row__key row__key--small char" data-input="3"><span>3</span></div>
-                <div class="row__key row__key--small char" data-input="4"><span>4</span></div>
-                <div class="row__key row__key--small char" data-input="5"><span>5</span></div>
-                <div class="row__key row__key--small char" data-input="6"><span>6</span></div>
-                <div class="row__key row__key--small char" data-input="7"><span>7</span></div>
-                <div class="row__key row__key--small char" data-input="8"><span>8</span></div>
-                <div class="row__key row__key--small char" data-input="9"><span>9</span></div>
-                <div class="row__key row__key--small char" data-input="0"><span>0</span></div>
-            </div>
-            <div class="keyboard__row row">
-                <div class="row__key char" data-input="q">
-                    <span class="upper">Q</span>
-                    <span class="lower">q</span>
+                    <div class="row__key row__key--small char changeable row__key--light" data-input="1"><span>1</span></div>
+                    <div class="row__key row__key--small char changeable row__key--light" data-input="2"><span>2</span></div>
+                    <div class="row__key row__key--small char changeable row__key--light" data-input="3"><span>3</span></div>
+                    <div class="row__key row__key--small char changeable row__key--light" data-input="4"><span>4</span></div>
+                    <div class="row__key row__key--small char changeable row__key--light" data-input="5"><span>5</span></div>
+                    <div class="row__key row__key--small char changeable row__key--light" data-input="6"><span>6</span></div>
+                    <div class="row__key row__key--small char changeable row__key--light" data-input="7"><span>7</span></div>
+                    <div class="row__key row__key--small char changeable row__key--light" data-input="8"><span>8</span></div>
+                    <div class="row__key row__key--small char changeable row__key--light" data-input="9"><span>9</span></div>
+                    <div class="row__key row__key--small char changeable row__key--light" data-input="0"><span>0</span></div>
                 </div>
-                <div class="row__key char" data-input="w">
-                    <span class="upper">W</span>
-                    <span class="lower">w</span>
+                <div class="keyboard__row row">
+                    <div class="row__key char changeable row__key--light" data-input="q">
+                        <span class="upper">Q</span>
+                        <span class="lower">q</span>
+                    </div>
+                    <div class="row__key char changeable row__key--light" data-input="w">
+                        <span class="upper">W</span>
+                        <span class="lower">w</span>
+                    </div>
+                    <div class="row__key char changeable row__key--light" data-input="e">
+                        <span class="upper">E</span>
+                        <span class="lower">e</span>
+                    </div>
+                    <div class="row__key char changeable row__key--light" data-input="r">
+                        <span class="upper">R</span>
+                        <span class="lower">r</span>
+                    </div>
+                    <div class="row__key char changeable row__key--light" data-input="t">
+                        <span class="upper">T</span>
+                        <span class="lower">t</span>
+                    </div>
+                    <div class="row__key char changeable row__key--light" data-input="y">
+                        <span class="upper">Y</span>
+                        <span class="lower">y</span>
+                    </div>
+                    <div class="row__key char changeable row__key--light" data-input="u">
+                        <span class="upper">U</span>
+                        <span class="lower">u</span>
+                    </div>
+                    <div class="row__key char changeable row__key--light" data-input="i">
+                        <span class="upper">I</span>
+                        <span class="lower">i</span>
+                    </div>
+                    <div class="row__key char changeable row__key--light" data-input="o">
+                        <span class="upper">O</span>
+                        <span class="lower">o</span>
+                    </div>
+                    <div class="row__key char changeable row__key--light" data-input="p">
+                        <span class="upper">P</span>
+                        <span class="lower">p</span>
+                    </div>
                 </div>
-                <div class="row__key char" data-input="e">
-                    <span class="upper">E</span>
-                    <span class="lower">e</span>
+                <div class="keyboard__row row">
+                    <div class="row__key char changeable row__key--light" data-input="a">
+                        <span class="upper">A</span>
+                        <span class="lower">a</span>
+                    </div>
+                    <div class="row__key char changeable row__key--light" data-input="s">
+                        <span class="upper">S</span>
+                        <span class="lower">s</span>
+                    </div>
+                    <div class="row__key char changeable row__key--light" data-input="d">
+                        <span class="upper">D</span>
+                        <span class="lower">d</span>
+                    </div>
+                    <div class="row__key char changeable row__key--light" data-input="f">
+                        <span class="upper">F</span>
+                        <span class="lower">f</span>
+                    </div>
+                    <div class="row__key char changeable row__key--light" data-input="g">
+                        <span class="upper">G</span>
+                        <span class="lower">g</span>
+                    </div>
+                    <div class="row__key char changeable row__key--light" data-input="h">
+                        <span class="upper">H</span>
+                        <span class="lower">h</span>
+                    </div>
+                    <div class="row__key char changeable row__key--light" data-input="j">
+                        <span class="upper">J</span>
+                        <span class="lower">j</span>
+                    </div>
+                    <div class="row__key char changeable row__key--light" data-input="k">
+                        <span class="upper">K</span>
+                        <span class="lower">k</span>
+                    </div>
+                    <div class="row__key char changeable row__key--light" data-input="l">
+                        <span class="upper">L</span>
+                        <span class="lower">l</span>
+                    </div>
                 </div>
-                <div class="row__key char" data-input="r">
-                    <span class="upper">R</span>
-                    <span class="lower">r</span>
+                <div class="keyboard__row row">
+                    <div class="row__key row__key--large mobile-maj changeable row__key--light"><span>&#8679;</span></div>
+                    <div class="row__key char changeable row__key--light" data-input="z">
+                        <span class="upper">Z</span>
+                        <span class="lower">z</span>
+                    </div>
+                    <div class="row__key char changeable row__key--light" data-input="x">
+                        <span class="upper">X</span>
+                        <span class="lower">x</span>
+                    </div>
+                    <div class="row__key char changeable row__key--light" data-input="c">
+                        <span class="upper">C</span>
+                        <span class="lower">c</span>
+                    </div>
+                    <div class="row__key char changeable row__key--light" data-input="v">
+                        <span class="upper">V</span>
+                        <span class="lower">v</span>
+                    </div>
+                    <div class="row__key char changeable row__key--light" data-input="b">
+                        <span class="upper">B</span>
+                        <span class="lower">b</span>
+                    </div>
+                    <div class="row__key char changeable row__key--light" data-input="n">
+                        <span class="upper">N</span>
+                        <span class="lower">n</span>
+                    </div>
+                    <div class="row__key char changeable row__key--light" data-input="m">
+                        <span class="upper">M</span>
+                        <span class="lower">m</span>
+                    </div>
+                    <div class="row__key row__key--large del changeable row__key--light"><span>&#9003</span></div>
                 </div>
-                <div class="row__key char" data-input="t">
-                    <span class="upper">T</span>
-                    <span class="lower">t</span>
+                <div class="keyboard__row row">
+                    <div class="row__key row__key--small row__key--xlarge changeable light-button light-button--light" data-mode="light"><span>&#9790;</span></div>
+                    <div class="row__key row__key--small char changeable row__key--light" data-input=","><span>,</span></div>
+                    <div class="row__key row__key--small row__key--space char changeable row__key--light" data-input="&nbsp"><span>space</span></div>
+                    <div class="row__key row__key--small char changeable row__key--light" data-input="."><span>.</span></div>
+                    <div class="row__key row__key--small row__key--xlarge enter changeable row__key--light" data-input="\n"><span>&#9166</span></div>
                 </div>
-                <div class="row__key char" data-input="y">
-                    <span class="upper">Y</span>
-                    <span class="lower">y</span>
-                </div>
-                <div class="row__key char" data-input="u">
-                    <span class="upper">U</span>
-                    <span class="lower">u</span>
-                </div>
-                <div class="row__key char" data-input="i">
-                    <span class="upper">I</span>
-                    <span class="lower">i</span>
-                </div>
-                <div class="row__key char" data-input="o">
-                    <span class="upper">O</span>
-                    <span class="lower">o</span>
-                </div>
-                <div class="row__key char" data-input="p">
-                    <span class="upper">P</span>
-                    <span class="lower">p</span>
-                </div>
-            </div>
-            <div class="keyboard__row row">
-                <div class="row__key char" data-input="a">
-                    <span class="upper">A</span>
-                    <span class="lower">a</span>
-                </div>
-                <div class="row__key char" data-input="s">
-                    <span class="upper">S</span>
-                    <span class="lower">s</span>
-                </div>
-                <div class="row__key char" data-input="d">
-                    <span class="upper">D</span>
-                    <span class="lower">d</span>
-                </div>
-                <div class="row__key char" data-input="f">
-                    <span class="upper">F</span>
-                    <span class="lower">f</span>
-                </div>
-                <div class="row__key char" data-input="g">
-                    <span class="upper">G</span>
-                    <span class="lower">g</span>
-                </div>
-                <div class="row__key char" data-input="h">
-                    <span class="upper">H</span>
-                    <span class="lower">h</span>
-                </div>
-                <div class="row__key char" data-input="j">
-                    <span class="upper">J</span>
-                    <span class="lower">j</span>
-                </div>
-                <div class="row__key char" data-input="k">
-                    <span class="upper">K</span>
-                    <span class="lower">k</span>
-                </div>
-                <div class="row__key char" data-input="l">
-                    <span class="upper">L</span>
-                    <span class="lower">l</span>
-                </div>
-            </div>
-            <div class="keyboard__row row">
-                <div class="row__key row__key--large mobile-maj"><span>&#8679;</span></div>
-                <div class="row__key char" data-input="z">
-                    <span class="upper">Z</span>
-                    <span class="lower">z</span>
-                </div>
-                <div class="row__key char" data-input="x">
-                    <span class="upper">X</span>
-                    <span class="lower">x</span>
-                </div>
-                <div class="row__key char" data-input="c">
-                    <span class="upper">C</span>
-                    <span class="lower">c</span>
-                </div>
-                <div class="row__key char" data-input="v">
-                    <span class="upper">V</span>
-                    <span class="lower">v</span>
-                </div>
-                <div class="row__key char" data-input="b">
-                    <span class="upper">B</span>
-                    <span class="lower">b</span>
-                </div>
-                <div class="row__key char" data-input="n">
-                    <span class="upper">N</span>
-                    <span class="lower">n</span>
-                </div>
-                <div class="row__key char" data-input="m">
-                    <span class="upper">M</span>
-                    <span class="lower">m</span>
-                </div>
-                <div class="row__key row__key--large del"><span>&#9003</span></div>
-            </div>
-            <div class="keyboard__row row">
-                <div class="row__key row__key--small row__key--xlarge"><span>!#1</span></div>
-                <div class="row__key row__key--small char" data-input=","><span>,</span></div>
-                <div class="row__key row__key--small row__key--space char" data-input="&nbsp"><span>space</span></div>
-                <div class="row__key row__key--small char" data-input="."><span>.</span></div>
-                <div class="row__key row__key--small row__key--xlarge enter" data-input="\n"><span>&#9166</span></div>
-            </div>
             </div>
         </section>
     </div>

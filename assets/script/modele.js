@@ -4,7 +4,7 @@ export let modele = {
 
     addInput: function(userInput, shift, uppercase) {
         const promise = new Promise((resolve) => {
-            if(this.uppercase && userInput != "")
+            if(this.uppercase && userInput != "\\n")
             {
                 this.inputList.push(userInput.toUpperCase())
             }
